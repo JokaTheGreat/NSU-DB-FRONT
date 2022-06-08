@@ -1,0 +1,25 @@
+.report-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #45484f;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.date-picker {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  &__title {
+    color: #54bb04;
+    text-transform: lowercase;
+    white-space: nowrap;
+    padding-right: 20px;
+  }
+}

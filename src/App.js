@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { paths } from "./utils/paths";
 import './App.css';
+import { Home } from "./Pages/HomePage/Home";
+import { TablePage } from "Pages/TablePage/TablePage";
+import { WithSidebar } from "Components/Sidebar/WithSidebar";
+import { ReportPage } from "Pages/ReportPage/ReportPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<WithSidebar />} >
+          <Route path={paths.home} element={<Home />}></Route>
+          <Route path={"/:tableName"} element={<TablePage />}></Route>
+          <Route path={"/report/:tableName/:reportName"} element={<ReportPage />}></Route>
+          <Route path={"/:tableName/:subTableName"} element={<TablePage />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

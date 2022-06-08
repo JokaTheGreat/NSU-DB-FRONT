@@ -1,0 +1,18 @@
+.select {
+  max-width: fit-content;
+  min-width: 200px;
+
+  &__wrapper {
+    display: flex;
+    padding: 20px 0;
+  }
+
+  &__title {
+    color: #54bb04;
+    text-transform: lowercase;
+    padding-right: 20px;
+  }
+
+  &__option {
+  }
+}
